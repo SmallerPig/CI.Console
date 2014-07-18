@@ -1,0 +1,19 @@
+#请配置您的数据库信息。在appliction/config/database.php文件里面修改
+#然后在对应的数据库里面执行下面的SQL语句来新建管理员表。(注意。如果您的配置文件里面存在表前缀，那么在这里最好也加上对应的表前缀。不然一个数据库只能存放一个admin表，不利于一个数据库对应多个项目)
+
+sql:
+
+CREATE TABLE admin(
+	id int(8) unsigned NOT NULL auto_increment,
+	username varchar(20) NOT NULL default '',
+	password varchar (50) NOT NULL default '',
+	PRIMARY KEY(id)
+) ENGINE =MyISAM DEFAULT CHARSET = utf8 AUTO_INCREMENT = 1;
+
+INSERT INTO admin (id,username,password) values(null,'admin',md5('admin'))
+
+
+
+#需要您的配置为网站基url。
+#默认CMS为你的url+admin。具体路由规则您可以在application/config/routes.php文件里面修改
+#如果需要更改session的名称可以在application/config/config.php文件里面修改

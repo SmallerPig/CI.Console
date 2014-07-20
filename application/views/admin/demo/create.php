@@ -38,6 +38,62 @@
         <div class="tipItem">
             任意内容都可以指定是否使用complexContent属性使得标题和表单内容分到两行进行呈现。
         </div>
+        <div class="contentItem">
+            <div class="contentItemTitle">上传控件</div>
+            <div id="big_pic_container" style="position:relative; width:200px; height: 32px;">
+            <input type="hidden" id="pic"  name = "pic" />
+            <script type="text/javascript">
+                aa = simple.uploader.create({
+                appendTo:document.getElementById("big_pic_container"),
+                url: "upload/image",
+                valueBindTo:document.getElementById("pic"),
+                limit:{
+                    fileFormat:"jpg|png"
+                },
+                uiText:{
+                    selectFile:"选择文件！！！",
+                    limit:"没选对文件XXX"
+                },
+                onEvent:{
+                    onSelectFile:function(files,limitValidateResult){
+                            a_onSelectFile_a=files;
+                            a_onSelectFile_b=limitValidateResult;
+                        },
+                    onProgress:function(e){
+                            a_onProgress_a=e.loaded;
+                        },
+                    onError:function(e){
+                            a_onError_a=e;
+                        },
+                    onCancelWhenUpload:function(){
+                            a_onCancelWhenUpload_a=111;
+                        },
+                    onCancelWhenComplete:function(){
+                            a_onCancelWhenComplete_a=111;
+                        },
+                    onComplete:function(files,returnResult){
+                            a_onComplete_a=files;
+                            a_onComplete_b=returnResult;
+                        }
+                }
+                });
+        
+                aa.setData({
+                        multiple:true,
+                        limit:{
+                            fileSizeMin:1,
+                            fileSizeMax:100000000
+                        }
+                    });
+                    
+                ab = aa.getData();
+            </script>
+        </div>
+
+        </div>
+
+
+
     </div>
 
     <div class="contentItemGroup">

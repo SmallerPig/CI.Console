@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="Content/ConsoleResource/css/component_list.css">
     <link rel="stylesheet" type="text/css" href="Content/ConsoleResource/css/component_select.css">
     <script src="Content/js/simple-validator.min.js"></script>
+    <script src="Content/ConsoleResource/simple-uploader/simple-uploader.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Content/ConsoleResource/simple-Uploader/simple-uploader.css">
 </head>
 
 <body>

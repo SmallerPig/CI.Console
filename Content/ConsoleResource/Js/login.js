@@ -19,7 +19,7 @@ var isposting = false;
 var successfn = function (data) {
     var logininfo = $("#loginInfor");
     if (data == "Success") {
-        window.location.replace("Admin/Console/main");
+        window.location.replace("admin/console/main");
     }
     else if (data.length == 0) {
         logininfo.css({ "display": "block", "opacity": "1" });
@@ -89,7 +89,7 @@ function doSubmit() {
             var usernama = $("#usernameInput").val();
             var password = $("#passwordInput").val();
             var data = { 'username': usernama, 'password': password };
-            core.AJAX(data, "Admin/Console/Login", beforesend, successfn, errorfn, complete);
+            core.AJAX(data, "admin/console/login", beforesend, successfn, errorfn, complete);
         }        
     };
 }

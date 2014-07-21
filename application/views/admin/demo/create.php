@@ -73,6 +73,22 @@
                             a_onCancelWhenComplete_a=111;
                         },
                     onComplete:function(files,returnResult){
+                            if (returnResult=="nologin") {
+                                alert("未登录或登陆超时，请重新登陆");
+                                return false;
+                            };
+                            if (returnResult=="nofiletoupload") {
+                                alert("无效文件");
+                                return false;
+                            };
+                            if (returnResult=="uncatcherror") {
+                                alert("未知错误");
+                                return false;
+                            };
+                            if (returnResult=="toolarge") {
+                                alert("文件太大超过系统限制");
+                                return false;
+                            };
                             a_onComplete_a=files;
                             a_onComplete_b=returnResult;
                         }

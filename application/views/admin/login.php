@@ -22,6 +22,11 @@
     <meta charset="utf-8">
     <title>登录</title>
     <base href="<?php echo base_url() ;?>"/>
+    <script type="text/javascript">
+        if (!document.getSelection) {
+            window.location = "oldbrowser.html";
+        }
+    </script>
     <link rel="stylesheet" type="text/css" href="Content/ConsoleResource/css/component_input.css">
     <link rel="stylesheet" type="text/css" href="Content/ConsoleResource/css/login.css">
     <script src="Content/js/jquery-1.8.2.min.js"></script>    

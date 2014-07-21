@@ -64,6 +64,7 @@
                         },
                     onError:function(e){
                             a_onError_a=e;
+                            alert(e);
                         },
                     onCancelWhenUpload:function(){
                             a_onCancelWhenUpload_a=111;
@@ -223,7 +224,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" checked />
+                    <input type="radio" name="najksdnas" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/9.jpg)"></div>
@@ -239,7 +240,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" checked />
+                    <input type="radio" name="najksdnas" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/11.jpg)"></div>
@@ -281,8 +282,8 @@
     <div class="contentItemGroup">
         <div class="contentItem" onlycontent>
             <!--部分内容由于每个项目涉及都不一样，这部分样式没有模板化，以后项目的时候也是直接写在html标签style样式里就行，比较方便修改-->
-            <a href="contentSample.html" onclick="return confirm('你确定要离开编辑页面吗')" class="inputButton" lefticon style="background-image:url(/Content/ConsoleResource/media/icon_return.png)">返回</a>
-            <a href="javascript:" class="inputButton" lefticon style="background-image:url(/Content/ConsoleResource/media/icon_disk.png);float:right">提交</a>
+            <a href="contentSample.html" onclick="return confirm('你确定要离开编辑页面吗')" class="inputButton" lefticon style="background-image:url(Content/ConsoleResource/media/icon_return.png)">返回</a>
+            <a href="javascript:" class="inputButton" lefticon style="background-image:url(Content/ConsoleResource/media/icon_disk.png);float:right">提交</a>
         </div>
         <div class="tipItem">
             使用onlyContent属性创建仅有表单内容而没有标题的内容

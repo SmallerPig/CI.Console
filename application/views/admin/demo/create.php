@@ -314,7 +314,7 @@
     <div class="contentItemGroup">
         <div class="contentItem" onlycontent>
             <!--部分内容由于每个项目涉及都不一样，这部分样式没有模板化，以后项目的时候也是直接写在html标签style样式里就行，比较方便修改-->
-            <a href="contentSample.html" onclick="return confirm('你确定要离开编辑页面吗')" class="inputButton" lefticon style="background-image:url(Content/ConsoleResource/media/icon_return.png)">返回</a>
+            <a href="admin/demo/index" onclick="return confirm('你确定要离开编辑页面吗')" class="inputButton" lefticon style="background-image:url(Content/ConsoleResource/media/icon_return.png)">返回</a>
             <a href="javascript:" class="inputButton" lefticon style="background-image:url(Content/ConsoleResource/media/icon_disk.png);float:right">提交</a>
         </div>
         <div class="tipItem">

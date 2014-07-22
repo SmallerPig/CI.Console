@@ -19,7 +19,8 @@ var isposting = false;
 var successfn = function (data) {
     var logininfo = $("#loginInfor");
     if (data == "Success") {
-        window.location.replace("admin/console/main");
+        console.log(getQueryString("ref"));
+        window.location.replace(getQueryString("ref"));
     }
     else if (data.length == 0) {
         logininfo.css({ "display": "block", "opacity": "1" });
@@ -92,5 +93,11 @@ function doSubmit() {
             core.AJAX(data, "admin/console/login", beforesend, successfn, errorfn, complete);
         }        
     };
+}
+
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
 }
 

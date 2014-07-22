@@ -53,8 +53,7 @@ function login()
  	{
 
  		if ($this->session->userdata('admin')!="admin") {
- 			$this->load->view('admin/login');
- 			return ;
+ 			redirect('admin/console/login?ref='.urlencode($this->uri->uri_string()));
  		}
  		$this->load->view('admin/main');
  	}

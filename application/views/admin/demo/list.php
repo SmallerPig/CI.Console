@@ -85,10 +85,13 @@
     </div>
     <div class="contentItem" onlycontent>
         <!--部分内容由于每个项目涉及都不一样，这部分样式没有模板化，以后项目的时候也是直接写在html标签style样式里就行，比较方便修改-->
-        <a class="inputButton" href="@ViewData["perPage"]">上一页</a>
+        <?php echo $pageination; ?>
+
+
+<!--         <a class="inputButton" href="@ViewData["perPage"]">上一页</a>
         <input type="text" class="inputText" style="margin-left:16px;width:48px;text-align:right;" value="1" />
         <span class="contentItemInfoWrapper"> / 211</span>
-        <a class="inputButton" href="@ViewData["nextPage"]" style="margin-left:16px;">下一页</a>
+        <a class="inputButton" href="@ViewData["nextPage"]" style="margin-left:16px;">下一页</a> -->
     </div>
 </div>
 

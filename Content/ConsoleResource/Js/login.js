@@ -19,8 +19,12 @@ var isposting = false;
 var successfn = function (data) {
     var logininfo = $("#loginInfor");
     if (data == "Success") {
-        console.log(getQueryString("ref"));
-        window.location.replace(getQueryString("ref"));
+        var ref = getQueryString("ref");
+        if (ref) {
+            window.location.replace(ref);
+        }else{
+            window.location.replace("admin/console/main");
+        };        
     }
     else if (data.length == 0) {
         logininfo.css({ "display": "block", "opacity": "1" });

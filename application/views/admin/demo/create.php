@@ -16,24 +16,21 @@
  */
  $this->load->view('admin/header');
  ?>
-
-
-
+ <?php echo validation_errors(); ?>
 <form id="form1" method="POST">
+    <div class="contentItemGroup">        
+        
 
-
-
-    <div class="contentItemGroup">
         <div class="contentItem">
             <div class="contentItemTitle">标题较短内容简单的使用此格式</div>
-            <input type="text" class="inputText" />
+            <input type="text" class="inputText"  name="title" value="<?php echo set_value('title'); ?>" />
         </div>
         <div class="tipItem">
             提示文字信息，可有可无，如果不需要，不写此标签就行。提示内容会根据上一个表单条目的格式自动调整左边距。
         </div>
         <div class="contentItem" complexcontent>
             <div class="contentItemTitle">标题较长、内容复杂的使用此格式</div>
-            <textarea class="inputText"></textarea>
+            <textarea class="inputText" name="summary" ><?php echo set_value('summary'); ?></textarea>
         </div>
         <div class="tipItem">
             任意内容都可以指定是否使用complexContent属性使得标题和表单内容分到两行进行呈现。
@@ -118,28 +115,28 @@
             <div class="contentItemTitle">单选radio</div>
             <div class="selectWrapper">
                 <label class="selectItem">
-                    <input type="radio" name="asd" class="selectItemInput" checked />
+                    <input type="radio" name="type" class="selectItemInput" value="1" <?php echo set_radio('type', '1', TRUE); ?> />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent">
                         文字文字文字文字文字
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="asd" class="selectItemInput" />
+                    <input type="radio" name="type" class="selectItemInput" value="2" <?php echo set_radio('type', '2'); ?>/>
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent">
                         文字文字文字文字文字
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="asd" class="selectItemInput" />
+                    <input type="radio" name="type" class="selectItemInput" value="3" <?php echo set_radio('type', '3'); ?>/>
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent">
                         文字文字文字文字文字
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="asd" class="selectItemInput" />
+                    <input type="radio" name="type" class="selectItemInput" value="4" <?php echo set_radio('type', '4'); ?>/>
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent">
                         文字文字文字文字文字
@@ -151,26 +148,45 @@
             <div class="contentItemTitle">多选checkbox</div>
             <div class="selectWrapper">
                 <label class="selectItem">
-                    <input type="checkbox" name="dddd" class="selectItemInput" value="" />
+                    <input type="checkbox" name="category[]" class="selectItemInput" value="1"  <?php echo set_checkbox('category[]', '1'); ?>  />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent">
                         文字文字文字文字文字
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="checkbox" name="dddd" class="selectItemInput" />
+                    <input type="checkbox" name="category[]" class="selectItemInput" value="2"  <?php echo set_checkbox('category[]', '2'); ?>  />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent">
                         文字文字文字文字文字
                     </div>
                 </label>
+                <label class="selectItem">
+                    <input type="checkbox" name="category[]" class="selectItemInput" value="3" <?php echo set_checkbox('category[]', '3'); ?>  />
+                    <span class="selectItemInputMarker"></span>
+                    <div class="selectItemContent">
+                        文字文字文字文字文字
+                    </div>
+                </label>
+                <label class="selectItem">
+                    <input type="checkbox" name="category[]" class="selectItemInput" value="4" <?php echo set_checkbox('category[]', '4'); ?>   />
+                    <span class="selectItemInputMarker"></span>
+                    <div class="selectItemContent">
+                        文字文字文字文字文字
+                    </div>
+                </label>
+
+
+
+
+
             </div>
         </div>
         <div class="contentItem">
             <div class="contentItemTitle">带有图片的多选</div>
             <div class="selectWrapper">
                 <label class="selectItem">
-                    <input type="checkbox" name="asdasd" class="selectItemInput" />
+                    <input type="checkbox" name="category_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/1.jpg)"></div>
@@ -178,7 +194,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="checkbox" name="asdasd" class="selectItemInput" />
+                    <input type="checkbox" name="category_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/2.jpg)"></div>
@@ -186,7 +202,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="checkbox" name="asdasd" class="selectItemInput" />
+                    <input type="checkbox" name="category_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/3.jpg)"></div>
@@ -194,7 +210,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="checkbox" name="asdasd" class="selectItemInput" />
+                    <input type="checkbox" name="category_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/4.jpg)"></div>
@@ -202,7 +218,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="checkbox" name="asdasd" class="selectItemInput" />
+                    <input type="checkbox" name="category_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/5.jpg)"></div>
@@ -210,7 +226,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="checkbox" name="asdasd" class="selectItemInput" />
+                    <input type="checkbox" name="category_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/6.jpg)"></div>
@@ -224,7 +240,7 @@
             <div class="contentItemTitle">带有图片的单选</div>
             <div class="selectWrapper">
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" checked />
+                    <input type="radio" name="type_image" class="selectItemInput" checked />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/7.jpg)"></div>
@@ -232,7 +248,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" />
+                    <input type="radio" name="type_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/8.jpg)"></div>
@@ -240,7 +256,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" />
+                    <input type="radio" name="type_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/9.jpg)"></div>
@@ -248,7 +264,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" />
+                    <input type="radio" name="type_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/10.jpg)"></div>
@@ -256,7 +272,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" />
+                    <input type="radio" name="type_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/11.jpg)"></div>
@@ -264,7 +280,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" />
+                    <input type="radio" name="type_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/12.jpg)"></div>
@@ -272,7 +288,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" />
+                    <input type="radio" name="type_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/13.jpg)"></div>
@@ -280,7 +296,7 @@
                     </div>
                 </label>
                 <label class="selectItem">
-                    <input type="radio" name="najksdnas" class="selectItemInput" />
+                    <input type="radio" name="type_image" class="selectItemInput" />
                     <span class="selectItemInputMarker"></span>
                     <div class="selectItemContent" hasimage>
                         <div class="imageContainer" style="background-image:url(Content/media/14.jpg)"></div>

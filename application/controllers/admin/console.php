@@ -19,6 +19,7 @@ class Console extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('console_model');
+  		$this->load->library('form_validation');
 	}
 
 function login()
@@ -51,12 +52,19 @@ function login()
 
  	function main()
  	{
-
  		if ($this->session->userdata('admin')!="admin") {
  			redirect('admin/console/login?ref='.urlencode($this->uri->uri_string()));
  		}
  		$this->load->view('admin/main');
  	}
+
+ 	function changepassword(){
+  		if ($this->form_validation->run('changepassword') == FALSE){
+ 	 		$this->load->view('admin/changepassword');
+ 		}
+ 	}
+
+
 
 }
 

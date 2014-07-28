@@ -92,6 +92,8 @@
         <input type="text" class="inputText" style="margin-left:16px;width:48px;text-align:right;" value="1" />
         <span class="contentItemInfoWrapper"> / 211</span>
         <a class="inputButton" href="@ViewData["nextPage"]" style="margin-left:16px;">下一页</a> -->
+        <p style="font-size:12px">加载该页面总计耗时: {elapsed_time} 秒</p>
+        <p style="font-size:12px"><?php var_dump($this->config); ?></p>
     </div>
 </div>
 

@@ -67,11 +67,7 @@ class Upload extends CI_Controller{
 			  exit;  
 			}			 
 			Echo $file_name.'||';  //使用explode('||',string)方法进行分割成数组
-		}
-
-
-
-	   
+		} 
 
  	}
 
@@ -86,6 +82,37 @@ class Upload extends CI_Controller{
  		$extent = $this->get_extension($filename);
  		return $store_dir.rand(100,999).time().'.'.$extent;
  	}
+
+
+ 	function ci_image(){
+		$config['upload_path'] = './upload/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		//$config['max_size'] = '1000';
+		$config['encrypt_name']  = TRUE;
+		$result = array();
+
+		$this->load->library('upload', $config);
+		foreach ($_FILES as $key => $value) {
+			if (!$this->upload->do_upload($key))
+			{
+			  $error = array('error' => $this->upload->display_errors());		   
+			  var_dump($error);
+			}else{
+			  $data =$this->upload->data();
+			  array_push($result, $data['file_name']);
+			} 
+		}
+
+		echo json_encode($result);
+
+
+		 
+
+
+ 	}
+
+
+
 
 
 }

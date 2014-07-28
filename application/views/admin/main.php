@@ -43,6 +43,11 @@
                     <a class="treeItem" link="console/itemedit/4">数据四</a>
                     <a class="treeItem" link="console/itemedit/5">数据五</a>
                 </span>  
+                <div class="treePack">密码管理</div>
+                <span class="treePackContent">
+                    <a class="treeItem" link="admin/console/changepassword">修改密码</a>
+
+                </span>  
             </div>
         </div>
     </div>

@@ -34,6 +34,13 @@
  	function create(){
 		$this->form_validation->set_error_delimiters('<p style="color:red;">', '</div>');
 
+		$check = $this->input->post('category');
+		if ($check) {
+			var_dump($check); # code...
+			exit();
+		}
+
+
  		if ($this->form_validation->run('demo_create') == FALSE){
  	 		$this->load->view('admin/demo/create');
  		}

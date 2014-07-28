@@ -42,6 +42,23 @@
                                             'rules' => 'trim|required'
                                          )
                                     ),
+                 'changepassword' => array(
+                                    array(
+                                            'field' => 'oldpassword',
+                                            'label' => '旧密码',
+                                            'rules' => 'trim|required|min_length[5]|max_length[12]'
+                                         ),
+                                    array(
+                                            'field' => 'newpassword',
+                                            'label' => '新密码',
+                                            'rules' => 'trim|required|min_length[5]|max_length[12]'
+                                         ),
+                                    array(
+                                            'field' => 'validpassword',
+                                            'label' => '验证新密码',
+                                            'rules' => 'trim|required|min_length[5]|max_length[12]'
+                                         ),
+                                    ),
                  'email' => array(
                                     array(
                                             'field' => 'emailaddress',

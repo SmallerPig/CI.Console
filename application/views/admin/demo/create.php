@@ -37,12 +37,12 @@
         </div>
         <div class="contentItem">
             <div class="contentItemTitle">上传控件</div>
-            <div id="big_pic_container" style="position:relative; width:200px; height: 32px;">
+            <div id="big_pic_container" style="position:relative; width:200px; height: 32px;"></div>
             <input type="hidden" id="pic"  name = "pic" />
             <script type="text/javascript">
                 aa = simple.uploader.create({
                 appendTo:document.getElementById("big_pic_container"),
-                url: "upload/image",
+                url: "upload/ci_image",
                 valueBindTo:document.getElementById("pic"),
                 limit:{
                     fileFormat:"jpg|png"
@@ -103,11 +103,6 @@
                 ab = aa.getData();
             </script>
         </div>
-
-        </div>
-
-
-
     </div>
 
     <div class="contentItemGroup">
